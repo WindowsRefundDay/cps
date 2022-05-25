@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>js</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<button id="btn">Click me</button>
+<p>Nothing here, click the button...</p>
+<p2 id="time"></p2>
+<script>
+const btn = document.getElementById('btn');
+const p = document.querySelector('p');
+const p2 = document.getElementById('time');
+let num = 1;
+let time = 6;
+
+        btn.addEventListener('click', function(){
+            let p = document.querySelector('p');
+            p.innerHTML = num++;
+        });    
+
+
+    var x = setInterval(function() {
+    if (time > 0 ) {
+        time--;
+        p2.innerHTML = "You have " + time + " seconds left";
+    } else {
+        p2.innerHTML = "You clicked " + num/5 + " times per second";
+        clearInterval(x);
+    }
+}, 1000);
+</script>
+</body>
+</html>
